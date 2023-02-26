@@ -1,0 +1,32 @@
+.animate {
+    transform: translateY(-20%);
+    animation: 1s animate-word ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards; // permet de garder l'animation à la fin de l'animation (sinon, l'animation revient à l'état initial) 
+}
+
+@keyframes animate-word {
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: translateY(0%);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateY(-20%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-20%);
+    }
+}
