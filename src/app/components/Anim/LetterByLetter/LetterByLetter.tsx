@@ -1,54 +1,36 @@
-export default function LetterByLetter() {
-    return 
-}
-/*
+"use client";
+import { useEffect, useRef } from 'react';
+import styles from './LetterByLettre.module.scss';
 
-// a convertir 
-
-
----
-export interface Props {
+export interface LetterByLetterProps {
     texte: string;
-    animate: string;
 }
-const { texte } = Astro.props;
-const { animate } = Astro.props;
----
-
-<span class={`${animate}`} id="content">{texte}</span>
-<script>
-    const content = document.querySelector("#content");
-    if (!content || !content.textContent) {
-        throw new Error("Content element not found or empty.");
-    }
-    if (content.classList.contains("true")) {
-        const texte = content.textContent.trim();
-        console.log(texte);
-        content.textContent = "";
-        let letter_counter = 0;
+const LetterByLetter = (props: LetterByLetterProps) => {
+    const content = useRef < HTMLSpanElement > (null);
+    useEffect(() => {
+        if (!content.current || !content.current.textContent) {
+            return;
+        }
+        const texte = content.current.textContent.trim(); // remove whitespace
+        content.current.textContent = "";
         for (let k = 0; k < texte.length; k++) {
             const span = document.createElement("span");
             span.textContent = texte[k];
-            span.style.opacity = "1";
-            span.style.position = "relative";
-            span.style.top = "-20px";
             setTimeout(() => {
-                content.appendChild(span);
-                span.animate(
-                    [
-                        { opacity: 0, position: "relative", top: 0 },
-
-                        { opacity: 1, position: "relative", top: "-20px" },
-                    ],
-                    {
-                        duration: 500,
-                        easing: "ease-out",
-                    }
-                );
-            }, 100 * letter_counter);
-            letter_counter++;
+                if (!content.current) {
+                    return;
+                }
+                content.current.appendChild(span);
+                span.style.animationFillMode = "forwards";
+                span.classList.add(styles.letter);
+            }, 50 * k);
         }
-    }
-</script>
 
-*/
+    }, []);
+    return (
+        <span ref={content} className={styles.spanContent} id="content">{props.texte}</span>
+
+    );
+}
+
+export default LetterByLetter;

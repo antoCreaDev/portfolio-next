@@ -19,7 +19,7 @@ const Navbar = () => {
         if (nav.current === null || selectWord === null) {
             return;
         }
-        console.log("toggleNav")
+        // toggle class open
         nav.current.classList.toggle(styles.open);
         document.body.style.overflowY = nav.current.classList.contains(styles.open)
             ? "hidden"
@@ -40,6 +40,7 @@ const Navbar = () => {
         if (nav.current.classList.contains(styles.open)) {
             document.body.style.overflowY = "scroll";
             nav.current.classList.remove(styles.open);
+            
         }
     }
     return (
@@ -47,14 +48,12 @@ const Navbar = () => {
             <div className={styles.img} onClick={toggleNav}>
                 <BurgerMenu />
             </div>
-
-
             <ul >
                 <li onClick={closeMenu} ><a href="#item1"><Word texte="Home" time="0" /></a></li>
-                <li onClick={closeMenu} ><a href="#item2"><Word texte="Projets" time="0.5" /></a></li>
-                <li onClick={closeMenu} ><a href="#item2"><Word texte="Distinctions" time="1" /></a></li>
-                <li onClick={closeMenu} ><a href="#item2"><Word texte="Compétences" time="1.5" /></a></li>
-                <li onClick={closeMenu} ><a href="#item4"><Word texte="Contact" time="2" /></a></li>
+                <li onClick={closeMenu} ><a href="#item2"><Word texte="Projets" time="0.25" /></a></li>
+                <li onClick={closeMenu} ><a href="#item2"><Word texte="Distinctions" time="0.5" /></a></li>
+                <li onClick={closeMenu} ><a href="#item2"><Word texte="Compétences" time="0.75" /></a></li>
+                <li onClick={closeMenu} ><a href="#item4"><Word texte="Contact" time="1" /></a></li>
             </ul>
         </nav>
     );

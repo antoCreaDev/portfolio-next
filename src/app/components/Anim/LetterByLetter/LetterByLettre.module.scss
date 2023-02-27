@@ -1,0 +1,37 @@
+.spanContent {
+    position: relative;
+    top: -20px;
+    color: rgba(0, 0, 0, 0);
+}
+
+.letter {
+    position: relative;
+    animation: 0.5s animate-word ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animate-word {
+    0% {
+        color: rgba(0, 0, 0, 0);
+        top: -20px;
+    }
+
+    20% {
+        color: rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    90% {
+        color: rgba(0, 0, 0, 1);
+        top: 0px;
+    }
+
+    to {
+        color: rgba(0, 0, 0, 1);
+        color: #000;
+        top: 0px;
+    }
+}
