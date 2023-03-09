@@ -5,11 +5,11 @@ import styles from './BurgerMenu.module.scss';
 export interface BurgerMenu {
     bool: boolean;
 }
-export default function BurgerMenu(props : BurgerMenu) {
+export default function BurgerMenu(props: BurgerMenu) {
     const lottieContainer = useRef < HTMLDivElement > (null);
-    // const [bool, setBool] = useState < boolean > (false);
+    const [bool, setBool] = useState < boolean > (false);
     const [lottieAnimation, setLottieAnimation] = useState < any > ({});
-    
+
     useEffect(() => {
         if (lottieContainer.current === null) {
             return;

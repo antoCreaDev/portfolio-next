@@ -6,7 +6,7 @@ export interface LetterByLetterProps {
     texte: string;
 }
 const LetterByLetter = (props: LetterByLetterProps) => {
-    const content = useRef < HTMLSpanElement > (null);
+    const content = useRef < HTMLDivElement > (null);
     useEffect(() => {
         if (!content.current || !content.current.textContent) {
             return;
@@ -28,7 +28,7 @@ const LetterByLetter = (props: LetterByLetterProps) => {
 
     }, []);
     return (
-        <div ref={content} className={styles.spanContent} id="content">{props.texte}</div>
+        <div ref={content} className={styles.spanContent}>{props.texte}</div>
 
     );
 }
