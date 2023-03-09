@@ -1,4 +1,25 @@
-.homeParagraph {
+.imgHome {
+  width: 70vw;
+  height: 40vh;
+  min-height: 40vh;
+  border : 1px solid yellow;
+}
+.home{
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+
+}
+.textHome{
+  // padding: 20px;
+  margin-top: 20px;
+  width: min-content;
+  height: min-content;
+  border: 1px solid green;
+
 }

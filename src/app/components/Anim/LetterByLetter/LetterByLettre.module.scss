@@ -8,6 +8,7 @@
     position: relative;
     animation: 0.5s animate-word ease-out;
     animation-fill-mode: forwards;
+
 }
 
 @keyframes animate-word {
@@ -37,13 +38,12 @@
 }
 
 
-// PERZONALIZE 
-
 .spanContent{
-    border: 1px solid green;
-    font-size : 15vh;
-
-    // text-align: center;
-    // text-align: justify;
+    // font-size with calc 
+    font-size: 6vw;
+    width: 70vw;
     height: 100vh;
+    // responsive calc word-spacing relative to font-size
+    word-spacing: 0.275em;
 }
+
