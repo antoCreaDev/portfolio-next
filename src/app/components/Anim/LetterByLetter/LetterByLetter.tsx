@@ -28,7 +28,7 @@ const LetterByLetter = (props: LetterByLetterProps) => {
 
     }, []);
     return (
-        <span ref={content} className={styles.spanContent} id="content">{props.texte}</span>
+        <div ref={content} className={styles.spanContent} id="content">{props.texte}</div>
 
     );
 }

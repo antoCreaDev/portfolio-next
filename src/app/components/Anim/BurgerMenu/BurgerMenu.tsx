@@ -2,11 +2,14 @@
 import Lottie from 'lottie-web';
 import { useRef, useEffect, useState } from 'react';
 import styles from './BurgerMenu.module.scss';
-
-export default function BurgerMenu() {
+export interface BurgerMenu {
+    bool: boolean;
+}
+export default function BurgerMenu(props : BurgerMenu) {
     const lottieContainer = useRef < HTMLDivElement > (null);
-    const [bool, setBool] = useState < boolean > (false);
+    // const [bool, setBool] = useState < boolean > (false);
     const [lottieAnimation, setLottieAnimation] = useState < any > ({});
+    
     useEffect(() => {
         if (lottieContainer.current === null) {
             return;
@@ -19,7 +22,7 @@ export default function BurgerMenu() {
                 loop: false,
                 autoplay: false,
             });
-        animate.setSpeed(1.5);
+        animate.setSpeed(2);
         setLottieAnimation(animate);
         // Return clean up function here
         return () => animate.destroy();
@@ -33,7 +36,6 @@ export default function BurgerMenu() {
         bool
             ? lottieAnimation.playSegments([totalFrames, 0], true)
             : lottieAnimation.playSegments([0, totalFrames], true);
-        setBool(!bool);
     }
     return (
         <div className={styles.lottieContainer} onClick={toggle} ref={lottieContainer}></div>

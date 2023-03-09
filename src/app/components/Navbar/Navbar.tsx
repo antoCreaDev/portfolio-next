@@ -8,6 +8,8 @@ import BurgerMenu from '../Anim/BurgerMenu/BurgerMenu';
 const Navbar = () => {
     const [selectWord, setSelectWord] = useState < Array < HTMLDivElement >> ([]);
     const nav = useRef < HTMLDivElement > (null);
+    const [bool, setBool] = useState < boolean > (false);
+
     // select element with styles.animate
     useEffect(() => {
         const selectWordNodes = document.querySelectorAll < HTMLDivElement > ('.' + stylesWord.animate);
@@ -40,13 +42,13 @@ const Navbar = () => {
         if (nav.current.classList.contains(styles.open)) {
             document.body.style.overflowY = "scroll";
             nav.current.classList.remove(styles.open);
-            
+
         }
     }
     return (
         <nav ref={nav} className={styles.nav}>
             <div className={styles.img} onClick={toggleNav}>
-                <BurgerMenu />
+                <BurgerMenu bool={bool} />
             </div>
             <ul >
                 <li onClick={closeMenu} ><a href="#item1"><Word texte="Home" time="0" /></a></li>
