@@ -17,7 +17,7 @@ export default function Home() {
           <div
             className={styles.textHome}
           >
-            <LetterByLetter texte="Lier l'art et l'informatique pour rendre le web plus beau et intelligent" />
+            <LetterByLetter texte="Lier l'art et l'informatique pour rendre le web plus beau et intelligent." />
           </div>
         </section>
 
