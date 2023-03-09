@@ -16,7 +16,7 @@
             flex-direction: row;
             justify-content: space-evenly;
             align-items: center;
-            
+
 
             a {
                 text-decoration: none;
@@ -65,4 +65,12 @@
                 opacity: 0;
             }
         }
+    }
+
+
+    // svg burger menu 
+
+    .lottieContainer {
+        width: 200px;
+        height: auto;
     }

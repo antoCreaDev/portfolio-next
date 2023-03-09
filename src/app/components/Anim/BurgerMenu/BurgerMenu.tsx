@@ -32,10 +32,13 @@ export default function BurgerMenu(props: BurgerMenu) {
         if (lottieContainer.current === null || lottieAnimation === null) {
             return;
         }
+
         const totalFrames = lottieAnimation.totalFrames;
         bool
             ? lottieAnimation.playSegments([totalFrames, 0], true)
             : lottieAnimation.playSegments([0, totalFrames], true);
+
+        setBool(!bool);
     }
     return (
         <div className={styles.lottieContainer} onClick={toggle} ref={lottieContainer}></div>
